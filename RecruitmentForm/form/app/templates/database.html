@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Applications</title>
+
+
+</head>
+<body>
+              <!--Database-->
+          <h2 class="my-4">Applications</h2>
+            {% for a in registration %}
+              <div class="column" style="margin-bottom:10px;">
+                 <style>
+                    #parent { white-space: nowrap; align:center }
+                    .child { display: inline-block; margin-right:10px; align:center
+                      width: 1000px;
+                      border: 1px solid black;
+                      border-radius: 10px;
+                      box-shadow: 0 0 5px 2px grey;}
+                 </style>
+
+                 <div id="parent" style="background-color:rgb(210, 210, 210);" >
+                     <img  src={{a.photo.url}} width="50" height="50"  style="margin: 30px auto auto 20px;">
+                     <h2 class="child">{{a.first_name}} {{a.last_name}} </h2>
+                     <h3 class="child">{{a.phone_number}} </h3>
+                     <h3 class="child">{{a.email}} </h3>
+                     <h3 class="child">{{a.age}} </h3>
+                     <h3 class="child">{{a.city}} </h3>
+                     <h3 class="child">{{a.field_of_study}} </h3>
+                     <h3 class="child">{{a.degree}} </h3>
+                     <h3 class="child">{{a.years_of_experience}} </h3>
+
+                     <h5 style="align:center" >{{a.short_introduction}} </h5>
+
+                 </div>
+
+
+
+
+
+
+              </div>
+
+            {% empty %}
+            <p>No applications added.</p>
+            {% endfor %}
+</body>
+</html>

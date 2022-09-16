@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Applications</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+              <!--Database-->
+          <h2 class="my-4">Applications</h2>
+              <style>
+              img {
+                  border-radius: 14%;box-shadow: 2px 2px;
+                }
+                 table, th, td {
+
+                  border-collapse: collapse;
+                  margin: 10px;
+                  text-align:center;
+
+                }
+                th, td {
+                    border: 1px solid white;
+                  background-color: #96D4D4;
+                  padding: 10px;
+                  max-width: 170px;
+                 overflow-wrap: break-word;
+
+                }
+                table {
+                    border: 2px solid black;
+                    box-shadow: 10px 10px;
+                    margin:30px;
+                }
+              </style>
+
+            <table>
+                  <tr>
+                      <th>Image</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                      <th>Age</th>
+                      <th>City</th>
+                      <th>Field of Study</th>
+                      <th>Degree</th>
+                      <th>Years of Experience</th>
+                      <th>Short Introduction</th>
+                      <th>Resume</th>
+                  </tr>
+                {% for a in registration %}
+                  <tr>
+                      <td><img  src={{a.photo.url}} width="50" height="50" ></td>
+                    <td>{{a.first_name}} {{a.last_name}} </td>
+
+                    <td style="max-width: 200px;" type="text" id="email">{{a.email}}</td>
+                    <td id="phone" >{{a.phone_number}}</td>
+                      <td style="max-width: 65px;">{{a.age}}</td>
+                      <td>{{a.city}}</td>
+                      <td style="max-width: 120px;">{{a.field_of_study}}</td>
+                      <td>{{a.degree}}</td>
+                      <td style="max-width: 90px;">{{a.years_of_experience}}</td>
+                      <td style="max-width: 200px;">{{a.short_introduction}}</td>
+                      <td><a href={{a.resume.url}}>Display</a> </td>
+
+
+                  </tr>
+
+            {% endfor %}
+                </table>
+
+
+</body>
+</html>
